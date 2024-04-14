@@ -7,6 +7,7 @@ public abstract class Character : MonoBehaviour
     protected string characterName;
     protected float attackDamage;
     protected float healAmount;
+    protected float stunnedTime;
 
     public virtual void StartTurn()
     {
@@ -24,9 +25,19 @@ public abstract class Character : MonoBehaviour
         Debug.Log(characterName + " has healed for: " + healAmount + "!");
     }
 
+    public virtual void TakeDamage(int damageAmount)
+    {
+        Debug.Log(characterName + " has been hit for: " + damageAmount + "!");
+    }
+
     public virtual void EndTurn()
     {
         //complete any action to be done on the end of the turn.
         Debug.Log(characterName + " has ended their turn!");
+    }
+
+    public virtual IEnumerator Stunned()
+    {
+        yield return null;
     }
 }
