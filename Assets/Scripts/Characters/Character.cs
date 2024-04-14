@@ -2,16 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character
+public abstract class Character : MonoBehaviour
 {
-    public float attackSpeed;
-    public float moveSpeed;
-    public float attackDamage;
-    public string name;
+    protected string characterName;
+    protected float attackDamage;
+    protected float healAmount;
 
-
-    public void Attack()
+    public virtual void StartTurn()
     {
-        Debug.Log(name + " has attacked, dealing: " + attackDamage + " damage!");
+        //complete any action to be done on turn start.
+        Debug.Log(characterName + " has started their turn!");
+    }
+
+    public virtual void Attack()
+    {
+        Debug.Log(characterName + " has attacked, dealing: " + attackDamage + " damage!");
+    }
+
+    public virtual void Heal()
+    {
+        Debug.Log(characterName + " has healed for: " + healAmount + "!");
+    }
+
+    public virtual void EndTurn()
+    {
+        //complete any action to be done on the end of the turn.
+        Debug.Log(characterName + " has ended their turn!");
     }
 }
