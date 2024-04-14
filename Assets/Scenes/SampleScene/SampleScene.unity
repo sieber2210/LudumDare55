@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTurnEnd: {fileID: 11400000, guid: 25f3d6cc11737914494ba3db6ea17be3, type: 2}
+  anim: {fileID: 564768155}
 --- !u!114 &175818309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +695,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4507134632732516, guid: fd940f9601cacdf4482e6a035180e8ed, type: 3}
   m_PrefabInstance: {fileID: 521635945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &564768155 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 783130911217948957, guid: 3ae5d68cbdddccf4685d7db17cd19d49, type: 3}
+  m_PrefabInstance: {fileID: 516422151}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &644797075
 GameObject:

@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerCharacter : Character
 {
     public VoidEvent playerTurnEnd;
+    public Animator anim;
 
     private void Start()
     {
         characterName = "Player";
         attackDamage = 10f;
         healAmount = 5f;
+        stunnedTime = 3f;
     }
 
     private void Update()
@@ -21,6 +23,10 @@ public class PlayerCharacter : Character
             Heal();
         if (Input.GetKeyDown(KeyCode.Alpha3))
             EndTurn();
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            TakeDamage(5);
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+            StartCoroutine(Stunned());
     }
 
     public override void StartTurn()
@@ -33,6 +39,7 @@ public class PlayerCharacter : Character
     {
         base.Attack();
         //do extra player attack stuff
+        anim.SetTrigger("isAttacking");
     }
 
     public override void Heal()
@@ -41,10 +48,24 @@ public class PlayerCharacter : Character
         //do extra player heal stuff
     }
 
+    public override void TakeDamage(int damageAmount)
+    {
+        base.TakeDamage(damageAmount);
+        anim.SetTrigger("onHit");
+    }
+
     public override void EndTurn()
     {
         base.EndTurn();
         //do extra player stuff on end of turn
         playerTurnEnd.Raise();
+    }
+
+    public override IEnumerator Stunned()
+    {
+        anim.SetTrigger("onStunned");
+        anim.SetBool("isStunned", true);
+        yield return new WaitForSeconds(stunnedTime);
+        anim.SetBool("isStunned", false);        
     }
 }
