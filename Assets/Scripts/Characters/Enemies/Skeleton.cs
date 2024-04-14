@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Skeleton : Character
 {
+    public VoidEvent enemyTurnEnd;
+
     private void Start()
     {
         characterName = "Skeleton";
@@ -33,5 +35,6 @@ public class Skeleton : Character
     {
         base.EndTurn();
         //do extra skeleton stuff on end of turn
+        enemyTurnEnd.Raise();
     }
 }

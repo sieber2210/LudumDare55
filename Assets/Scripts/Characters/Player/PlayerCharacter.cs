@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCharacter : Character
 {
+    public VoidEvent playerTurnEnd;
+
     private void Start()
     {
         characterName = "Player";
@@ -13,8 +15,6 @@ public class PlayerCharacter : Character
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            StartTurn();
         if (Input.GetKeyDown(KeyCode.Alpha1))
             Attack();
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -45,5 +45,6 @@ public class PlayerCharacter : Character
     {
         base.EndTurn();
         //do extra player stuff on end of turn
+        playerTurnEnd.Raise();
     }
 }

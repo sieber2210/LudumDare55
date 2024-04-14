@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 175818307}
   - component: {fileID: 175818304}
   - component: {fileID: 175818308}
+  - component: {fileID: 175818309}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -348,6 +349,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b9db2bb391b2e4ab7047bd6a6d48d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTurnEnd: {fileID: 11400000, guid: 25f3d6cc11737914494ba3db6ea17be3, type: 2}
+--- !u!114 &175818309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175818303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe59372f0ca5d74098c9a719fccbdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 3fe4458c6f5f6d243b131d95232aef01, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 175818308}
+        m_TargetAssemblyTypeName: PlayerCharacter, Assembly-CSharp
+        m_MethodName: StartTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &206641747
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +708,7 @@ GameObject:
   - component: {fileID: 644797078}
   - component: {fileID: 644797077}
   - component: {fileID: 644797081}
+  - component: {fileID: 644797082}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -785,6 +816,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db32365a0ff030408a08af65ecfde5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyTurnEnd: {fileID: 11400000, guid: fb99b3a3912153745b09c2a62a1e5834, type: 2}
+--- !u!114 &644797082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644797075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe59372f0ca5d74098c9a719fccbdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e7bf3486ce45c5c4699502b40a878b06, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 644797081}
+        m_TargetAssemblyTypeName: Skeleton, Assembly-CSharp
+        m_MethodName: StartTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &740278357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2940,6 +3000,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4507134632732516, guid: fd940f9601cacdf4482e6a035180e8ed, type: 3}
   m_PrefabInstance: {fileID: 1755818711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1820703923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1820703925}
+  - component: {fileID: 1820703924}
+  - component: {fileID: 1820703926}
+  - component: {fileID: 1820703927}
+  m_Layer: 0
+  m_Name: TurnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1820703924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820703923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d900e3193b2d3c14cbcd985f2966d53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurnStart: {fileID: 11400000, guid: 3fe4458c6f5f6d243b131d95232aef01, type: 2}
+  enemyTurnStart: {fileID: 11400000, guid: e7bf3486ce45c5c4699502b40a878b06, type: 2}
+  currentTurnOwner: 0
+--- !u!4 &1820703925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820703923}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820703926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820703923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe59372f0ca5d74098c9a719fccbdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 25f3d6cc11737914494ba3db6ea17be3, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1820703924}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: AdvanceTurnOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1820703927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820703923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe59372f0ca5d74098c9a719fccbdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fb99b3a3912153745b09c2a62a1e5834, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1820703924}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: AdvanceTurnOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1824362495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3504,6 +3669,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1820703925}
   - {fileID: 963194228}
   - {fileID: 1538106711}
   - {fileID: 644797080}
