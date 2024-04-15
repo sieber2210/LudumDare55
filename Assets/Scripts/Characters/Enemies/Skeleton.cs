@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Skeleton : Character
 {
-    public VoidEvent enemyTurnEnd;
-
     private void Start()
     {
         characterName = "Skeleton";
@@ -27,6 +25,7 @@ public class Skeleton : Character
     {
         base.StartTurn();
         //do extra skeleton stuff on start of turn
+        //skeletons are aggressive melee fighters. Just move and attack.
     }
 
     public override void Attack()
@@ -50,6 +49,6 @@ public class Skeleton : Character
     {
         base.EndTurn();
         //do extra skeleton stuff on end of turn
-        enemyTurnEnd.Raise();
+        //enemyTurnEnd.Raise();
     }
 }
