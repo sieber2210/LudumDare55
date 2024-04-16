@@ -1,5 +1,5 @@
 public abstract class Skill
 {
-    public abstract int range(); // range in tile count
-    public abstract void perform(Character target);
+    public abstract int Range(); // range in tile count
+    public abstract void Perform(Character target);
 }

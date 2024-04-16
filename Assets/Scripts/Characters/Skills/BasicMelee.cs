@@ -7,12 +7,12 @@ public class BasicMelee : Skill
         Instance = new BasicMelee();
     }
 
-    public override int range()
+    public override int Range()
     {
         return 1;
     }
 
-    public override void perform(Character target) 
+    public override void Perform(Character target) 
     {
         // reduce health of target
     }

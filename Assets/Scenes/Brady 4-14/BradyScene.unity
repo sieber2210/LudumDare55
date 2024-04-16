@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnEnd: {fileID: 0}
   playerTurnEnd: {fileID: 11400000, guid: 25f3d6cc11737914494ba3db6ea17be3, type: 2}
+  anim: {fileID: 0}
 --- !u!114 &175818309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 346109758}
+  - component: {fileID: 346109759}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Untagged
@@ -555,6 +557,18 @@ Transform:
   - {fileID: 1649521532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346109759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346109757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3913d920667617846ac6039b5955d4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &386492476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,8 +1312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 5938981199206244391, guid: 9c68c50c8af5afc47a1ac74fdb6ef911, type: 3}
-  width: 10
-  height: 10
+  width: 8
+  height: 8
   tileOffsetX: 5
   tileOffsetZ: 5
 --- !u!1001 &988332798
@@ -3179,7 +3193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d900e3193b2d3c14cbcd985f2966d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters: {fileID: 0}
+  characters: {fileID: 346109758}
   playerTurnStart: {fileID: 11400000, guid: 3fe4458c6f5f6d243b131d95232aef01, type: 2}
   enemyTurnStart: {fileID: 11400000, guid: e7bf3486ce45c5c4699502b40a878b06, type: 2}
   currentTurnOwner: 0
