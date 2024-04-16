@@ -47,7 +47,6 @@ public class GameGrid : MonoBehaviour
                 grid[i, j] = tile;
             }
         }
-        Debug.Log("");
     }
 
     public Vector3 GetTile(int x, int y) 
