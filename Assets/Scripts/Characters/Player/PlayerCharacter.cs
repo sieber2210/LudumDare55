@@ -9,6 +9,7 @@ public class PlayerCharacter : Character
 
     private void Start()
     {
+        base.Start();
         characterName = "Player";
         attackDamage = 10f;
         healAmount = 5f;
@@ -17,6 +18,7 @@ public class PlayerCharacter : Character
 
     private void Update()
     {
+        base.Update();
         if (Input.GetKeyDown(KeyCode.Alpha1))
             Attack();
         if (Input.GetKeyDown(KeyCode.Alpha2))

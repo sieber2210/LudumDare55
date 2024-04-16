@@ -27,11 +27,11 @@ public class TurnManager : MonoBehaviour
         Transform enemies = characters.GetChild(0);
         Transform pcs = characters.GetChild(1);
         List<Character> allChars = new List<Character>();
-        foreach (GameObject enemy in enemies)
+        foreach (Transform enemy in enemies)
         {
             allChars.Add(enemy.GetComponent<Character>());
         }
-        foreach (GameObject pc in pcs)
+        foreach (Transform pc in pcs)
         {
             allChars.Add(pc.GetComponent<Character>());
         }
